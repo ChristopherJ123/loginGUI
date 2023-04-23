@@ -3,10 +3,13 @@ package loginGUI.GUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.util.Arrays;
 
 
 public class LoginGUI extends JFrame implements ActionListener, KeyListener, MouseListener {
+
+    LoginService loginService = new LoginService();
 
     JPanel usernamePanel;
     JPanel passwordPanel;
@@ -16,7 +19,7 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     JTextField userNameTextField;
     JPasswordField passwordTextField;
     JLabel staticLabel;
-    JLabel regiterLabel;
+    JLabel registerLabel;
 
     char[] password = {'t', 'o', 't', 'o'};
 
@@ -44,11 +47,11 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
         passwordPanel.add(passwordTextField, BorderLayout.EAST);
 
         panel13 = new JPanel();
-        regiterLabel = new JLabel("<HTML><U>Don't have an account? Register now!</U></HTML>");
-        regiterLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        regiterLabel.setFont(new Font(null, Font.PLAIN, 12));
-        regiterLabel.addMouseListener(this);
-        panel13.add(regiterLabel);
+        registerLabel = new JLabel("<HTML><U>Don't have an account? Register now!</U></HTML>");
+        registerLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        registerLabel.setFont(new Font(null, Font.PLAIN, 12));
+        registerLabel.addMouseListener(this);
+        panel13.add(registerLabel);
 
         signinPanel = new JPanel();
         signinPanel.setLayout(new FlowLayout());
@@ -56,7 +59,7 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
         signinButton.addActionListener(this);
         signinPanel.add(signinButton);
 
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setLayout(new GridLayout(4,1,5,5));
 
@@ -81,7 +84,7 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     }
 
     public static void main(String[] args) {
-        new LoginGUI();
+        LoginGUI loginGUIInitiate = new LoginGUI();
     }
 
     @Override
@@ -104,7 +107,13 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == 10) {
-            login(userNameTextField.getText(), passwordTextField.getPassword());
+            if (loginService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && loginService.fileExists()) {
+                if (loginService.fileExists()) {
+                    if (loginService.usernameMatchPassword(userNameTextField.getText(), new String(passwordTextField.getPassword()))) {
+                        System.out.println("Login successful");
+                    }
+                }
+            }
         }
     }
 
@@ -120,22 +129,24 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getSource() == regiterLabel) {
-            System.out.println("true");
+        if (e.getSource() == registerLabel) {
+            registerLabel.setEnabled(false);
+            this.setEnabled(false);
+            new RegisterGUI();
         }
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if (e.getSource() == regiterLabel) {
-            regiterLabel.setForeground(Color.BLUE);
+        if (e.getSource() == registerLabel) {
+            registerLabel.setForeground(Color.BLUE);
         }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        if (e.getSource() == regiterLabel) {
-            regiterLabel.setForeground(Color.BLACK);
+        if (e.getSource() == registerLabel) {
+            registerLabel.setForeground(Color.BLACK);
         }
     }
 }

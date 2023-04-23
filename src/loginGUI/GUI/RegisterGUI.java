@@ -4,8 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-public class RegisterGUI extends JFrame implements KeyListener {
+public class RegisterGUI extends JFrame implements KeyListener, WindowListener {
+
+    LoginService loginService = new LoginService();
 
     JPanel body;
     JPanel[] panel;
@@ -98,7 +102,8 @@ public class RegisterGUI extends JFrame implements KeyListener {
 
 
         this.setTitle("setTitle goes here");
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.addWindowListener(this);
         this.setResizable(true);
         this.setVisible(true);
         this.add(body);
@@ -124,6 +129,50 @@ public class RegisterGUI extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == 10) {
+            if(loginService.textFieldNotEmpty(emailTextField.getText(), usernameTextField.getText(),
+                    passwordTextField.getText(), reenterPasswordTextField.getText())) {
+                if (loginService.reenterPasswordIsSame(passwordTextField.getText(), reenterPasswordTextField.getText())) {
+                    loginService.createFile();
+                    loginService.writeFile(emailTextField.getText(), usernameTextField.getText(),
+                            passwordTextField.getText());
+                }
+            }
+        }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        new LoginGUI();
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
 
     }
 }
