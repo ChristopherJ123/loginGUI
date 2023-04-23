@@ -103,7 +103,7 @@ public class RegisterGUI extends JFrame implements ActionListener, KeyListener {
 
         this.setTitle(AppConstants.TITLE_REGISTER);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        this.setResizable(true);
+        this.setResizable(false);
         this.setVisible(true);
         this.add(body);
         this.pack();
