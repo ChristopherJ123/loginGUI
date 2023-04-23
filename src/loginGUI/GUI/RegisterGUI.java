@@ -1,5 +1,7 @@
 package loginGUI.GUI;
 
+import loginGUI.Constants.AppConstants;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -99,7 +101,7 @@ public class RegisterGUI extends JFrame implements ActionListener, KeyListener {
         body.add(panel[6]);
 
 
-        this.setTitle("setTitle goes here");
+        this.setTitle(AppConstants.TITLE_REGISTER);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(true);
         this.setVisible(true);

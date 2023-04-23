@@ -1,5 +1,7 @@
 package loginGUI.GUI;
 
+import loginGUI.Constants.AppConstants;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -58,6 +60,7 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setLayout(new GridLayout(4,1,5,5));
+        this.setTitle(AppConstants.TITLE_LOGIN);
 
         this.add(usernamePanel);
         this.add(passwordPanel);
@@ -72,8 +75,8 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == signinButton) {
-            if (appService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && appService.fileExists()) {
-                if (appService.fileExists()) {
+            if (appService.fileExists()) {
+                if (appService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && appService.fileExists()) {
                     if (appService.usernameMatchPassword(userNameTextField.getText(), new String(passwordTextField.getPassword()))) {
                         System.out.println("Login successful");
                     }
@@ -95,8 +98,8 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == 10) {
-            if (appService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && appService.fileExists()) {
-                if (appService.fileExists()) {
+            if (appService.fileExists()) {
+                if (appService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && appService.fileExists()) {
                     if (appService.usernameMatchPassword(userNameTextField.getText(), new String(passwordTextField.getPassword()))) {
                         System.out.println("Login successful");
                     }
