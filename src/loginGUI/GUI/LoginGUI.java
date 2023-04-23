@@ -3,13 +3,11 @@ package loginGUI.GUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
-import java.util.Arrays;
 
 
 public class LoginGUI extends JFrame implements ActionListener, KeyListener, MouseListener {
 
-    LoginService loginService = new LoginService();
+    AppService appService = new AppService();
 
     JPanel usernamePanel;
     JPanel passwordPanel;
@@ -20,8 +18,6 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     JPasswordField passwordTextField;
     JLabel staticLabel;
     JLabel registerLabel;
-
-    char[] password = {'t', 'o', 't', 'o'};
 
     public LoginGUI() {
         userNameTextField = new JTextField();
@@ -73,24 +69,16 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
         this.addKeyListener(this);
     }
 
-    public void login(String username, char[] password) {
-        if (username.equals("christopherj") && Arrays.equals(password, this.password)) {
-            JOptionPane.showMessageDialog(null, "Welcome user", "Login success", JOptionPane.PLAIN_MESSAGE);
-            this.dispose();
-        } else if (username.length() == 0 || password.length == 0) {
-            JOptionPane.showMessageDialog(null, "Field cannot be empty!", "Login failed", JOptionPane.WARNING_MESSAGE);
-        } else
-            JOptionPane.showMessageDialog(null, "Login failed", "Login failed", JOptionPane.WARNING_MESSAGE);
-    }
-
-    public static void main(String[] args) {
-        LoginGUI loginGUIInitiate = new LoginGUI();
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == signinButton) {
-            login(userNameTextField.getText(), passwordTextField.getPassword());
+            if (appService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && appService.fileExists()) {
+                if (appService.fileExists()) {
+                    if (appService.usernameMatchPassword(userNameTextField.getText(), new String(passwordTextField.getPassword()))) {
+                        System.out.println("Login successful");
+                    }
+                }
+            }
         }
     }
 
@@ -107,9 +95,9 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == 10) {
-            if (loginService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && loginService.fileExists()) {
-                if (loginService.fileExists()) {
-                    if (loginService.usernameMatchPassword(userNameTextField.getText(), new String(passwordTextField.getPassword()))) {
+            if (appService.textFieldNotEmpty(userNameTextField.getText(), new String(passwordTextField.getPassword())) && appService.fileExists()) {
+                if (appService.fileExists()) {
+                    if (appService.usernameMatchPassword(userNameTextField.getText(), new String(passwordTextField.getPassword()))) {
                         System.out.println("Login successful");
                     }
                 }
@@ -130,8 +118,6 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
     @Override
     public void mouseReleased(MouseEvent e) {
         if (e.getSource() == registerLabel) {
-            registerLabel.setEnabled(false);
-            this.setEnabled(false);
             new RegisterGUI();
         }
     }
