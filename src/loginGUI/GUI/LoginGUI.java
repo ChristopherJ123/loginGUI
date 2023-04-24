@@ -54,6 +54,20 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
         signinPanel = new JPanel();
         signinPanel.setLayout(new FlowLayout());
         signinButton = new JButton("Login");
+        signinButton.setFont(new Font("Arial", Font.BOLD, 16));
+        signinButton.setForeground(Color.WHITE);
+        signinButton.setBackground(new Color(52, 152, 219)); // set background color to blue
+        signinButton.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30)); // add padding
+        signinButton.setFocusPainted(false); // remove border focus
+        signinButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // change cursor to hand
+        signinButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                signinButton.setBackground(new Color(41, 128, 185)); // set darker background on hover
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                signinButton.setBackground(new Color(52, 152, 219)); // set default background on exit
+            }
+        });
         signinButton.addActionListener(this);
         signinPanel.add(signinButton);
 
