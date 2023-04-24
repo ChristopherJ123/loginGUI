@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04088140-f43c-4e31-9f7c-b1c6943b3594" name="Changes" comment="updated readme.md" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OmRg26vlG4FTBAvEyVaT0p370G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Youtube/Modding/loginUI&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Youtube\Modding\loginUI\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04088140-f43c-4e31-9f7c-b1c6943b3594" name="Changes" comment="" />
+      <created>1682163882080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682163882080</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Java login GUI initial commit (functional hopefully)">
+      <created>1682226320934</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682226320934</updated>
+    </task>
+    <task id="LOCAL-00002" summary="All main methods finished, can register multiple accounts.">
+      <created>1682254493244</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682254493244</updated>
+    </task>
+    <task id="LOCAL-00003" summary="removed &quot;out&quot; from git">
+      <created>1682255040137</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682255040137</updated>
+    </task>
+    <task id="LOCAL-00004" summary="removed &quot;out&quot; from git">
+      <created>1682255178961</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682255178961</updated>
+    </task>
+    <task id="LOCAL-00005" summary="removed unnecessary files from git">
+      <created>1682256078703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682256078703</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed White space error, added AppConstants.java, polished">
+      <created>1682260376898</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682260376898</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added readme.md, tweaks">
+      <created>1682261416157</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682261416157</updated>
+    </task>
+    <task id="LOCAL-00008" summary="forgor about the tweaks part, no more resizables :)">
+      <created>1682261730738</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682261730738</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updated readme.md">
+      <created>1682316302766</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682316302766</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Java login GUI initial commit (functional hopefully)" />
+    <MESSAGE value="All main methods finished, can register multiple accounts." />
+    <MESSAGE value="removed &quot;out&quot; from git" />
+    <MESSAGE value="removed unnecessary files from git" />
+    <MESSAGE value="Fixed White space error, added AppConstants.java, polished" />
+    <MESSAGE value="added readme.md, tweaks" />
+    <MESSAGE value="forgor about the tweaks part, no more resizables :)" />
+    <MESSAGE value="updated readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated readme.md" />
+  </component>
+</project>
