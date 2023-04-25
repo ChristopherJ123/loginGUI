@@ -5,6 +5,7 @@ import loginGUI.Constants.AppConstants;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.MouseEvent;
 
 
 public class LoginGUI extends JFrame implements ActionListener, KeyListener, MouseListener {
@@ -60,7 +61,7 @@ public class LoginGUI extends JFrame implements ActionListener, KeyListener, Mou
         signinButton.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30)); // add padding
         signinButton.setFocusPainted(false); // remove border focus
         signinButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // change cursor to hand
-        signinButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        signinButton.addMouseListener(new MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 signinButton.setBackground(new Color(41, 128, 185)); // set darker background on hover
             }

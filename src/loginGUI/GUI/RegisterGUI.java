@@ -89,6 +89,20 @@ public class RegisterGUI extends JFrame implements ActionListener, KeyListener {
         createAccountButton.addActionListener(this);
         panel[6].setLayout(new FlowLayout());
         panel[6].add(createAccountButton);
+        createAccountButton.setFont(new Font("Arial", Font.BOLD, 16));
+        createAccountButton.setForeground(Color.WHITE);
+        createAccountButton.setBackground(new Color(52, 152, 219)); // set background color to blue
+        createAccountButton.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30)); // add padding
+        createAccountButton.setFocusPainted(false); // remove border focus
+        createAccountButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // change cursor to hand
+        createAccountButton.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                createAccountButton.setBackground(new Color(41, 128, 185)); // set darker background on hover
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                createAccountButton.setBackground(new Color(52, 152, 219)); // set default background on exit
+            }
+        });
 
         body = new JPanel();
         body.setLayout(new GridLayout(7,1));
